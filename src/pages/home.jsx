@@ -5,16 +5,7 @@ export default function Home() {
 
   return (
     <>
-      <h1 className="title">{hello}</h1>
-      <p className="title">
-        This starter gives you everything you need to start working on a new
-        React project, and nothing more. If you're looking for something with
-        more options included out of the box, try remixing{" "}
-        <a href="https://glitch.com/edit/#!/remix/glitch-hello-react">
-          ~glitch-hello-react
-        </a>
-        .
-      </p>
+      
       <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
         <div className="md:flex">
           <div className="md:shrink-0">
@@ -34,7 +25,7 @@ export default function Home() {
             >
               Incredible accommodation for your team
             </a>
-            <p className="mt-2 text-slate-500">
+            <p className="mt-2 text-slate-500 ">
               Looking to take your team away on a retreat to enjoy awesome food
               and take in some sunshine? We have a list of places to do just
               that.
