@@ -2,15 +2,18 @@
   "links": [
     {
       "label": "Button 1",
-      "baseUrl": "https://www.example1.com/search?q="
+      "baseUrl": "https://www.example1.com/search?q=",
+      "imageUrl": "https://via.placeholder.com/4"
     },
     {
       "label": "Button 2",
-      "baseUrl": "https://www.example2.com/search?q="
+      "baseUrl": "https://www.example2.com/search?q=",
+      "imageUrl": "https://via.placeholder.com/24" 
     },
     {
       "label": "Button 3",
-      "baseUrl": "https://www.example3.com/search?q="
+      "baseUrl": "https://www.example3.com/search?q=",
+      "imageUrl": "https://via.placeholder.com/24"
     }
   ]
 }
