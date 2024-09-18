@@ -1,38 +1,39 @@
 import * as React from "react";
 
 export default function Home() {
-  const hello = "Hello React!";
+
 
   return (
-    <>
+   
       
-      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-        <div className="md:flex">
-          <div className="md:shrink-0">
-            <img
-              className="h-48 w-full object-cover md:h-full md:w-48"
-              src="/img/building.jpg"
-              alt="Modern building architecture"
-            ></img>
-          </div>
-          <div className="p-8">
-            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-              Company retreats
-            </div>
-            <a
-              href="#"
-              className="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
-            >
-              Incredible accommodation for your team
-            </a>
-            <p className="mt-2 text-slate-500 ">
-              Looking to take your team away on a retreat to enjoy awesome food
-              and take in some sunshine? We have a list of places to do just
-              that.
-            </p>
-          </div>
-        </div>
+  <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+      {/* Nadpis s logem */}
+      <div className="flex items-center space-x-4 mb-8">
+        <img
+          src="https://via.placeholder.com/50"
+          alt="Logo"
+          className="w-12 h-12"
+        />
+        <h1 className="text-3xl font-bold">Můj Web</h1>
       </div>
-    </>
+
+      {/* Vyhledávací pole */}
+      <div className="mb-6">
+        <input
+          type="text"
+          placeholder="Vyhledávejte zde..."
+          className="border border-gray-300 rounded-lg p-2 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      {/* Tlačítka v jedné linii */}
+      <div className="flex space-x-4">
+        <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Tlačítko 1</button>
+        <button className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">Tlačítko 2</button>
+        <button className="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600">Tlačítko 3</button>
+        <button className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600">Tlačítko 4</button>
+      </div>
+    </div>
+  
   );
 }
