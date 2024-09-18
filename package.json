@@ -8,7 +8,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "build:css": "tailwindcss build -i ./src/styles/styles.css -o ./public/styles.css",
-    "watch:css": "tailwindcss -i ./src/styles/styles.css -o ./public/styles.css --watch"
+    "watch:css": "tailwindcss -i ./src/styles/styles.css -o ./styles.css --watch"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.1",

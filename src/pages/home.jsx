@@ -1,36 +1,32 @@
 import * as React from "react";
-import { useState,useEffect  } from 'react';
-
-
+import { useState, useEffect } from "react";
 
 const Home = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [links, setLinks] = useState([]);
-  const [googleIcon, setGoogleIcon] = useState('');
-  
- // Načtení dat z JSON souboru
+  const [googleIcon, setGoogleIcon] = useState("");
+
+  // Načtení dat z JSON souboru
   useEffect(() => {
-    fetch('src/links.json')
+    fetch("src/links.json")
       .then((response) => response.json())
       .then((data) => setLinks(data.links));
   }, []);
-  
 
   // Funkce pro otevření odkazu s textem z inputu
   const openLink = (baseUrl) => {
     const fullUrl = `${baseUrl}${encodeURIComponent(inputValue)}`;
-    window.open(fullUrl, '_blank');
+    window.open(fullUrl, "_blank");
   };
 
   return (
     <div className="p-8">
       {/* Logo a nadpis */}
       <div className="flex items-center mb-4">
-
         <h1 className="text-4xl font-bold font-poppins">Code Inspiration</h1>
       </div>
 
-   {/* Input pro zadání textu */}
+      {/* Input pro zadání textu */}
       <div className="mb-4">
         <input
           type="text"
@@ -41,9 +37,9 @@ const Home = () => {
         />
       </div>
 
-{/* Tlačítka pro otevření odkazů */}
+      {/* Tlačítka pro otevření odkazů */}
       <div className="flex flex-row p-2 space-x-1 ">
- {links.map((link, index) => {
+        {links.map((link, index) => {
           // Složený obrázek: základní obrázek + Google ikona
           const imageUrl = `http://www.google.com/s2/favicons?domain=${link.baseUrl}`;
 
@@ -54,11 +50,7 @@ const Home = () => {
               onClick={() => openLink(link.baseUrl)}
             >
               {/* Obrázek */}
-              <img
-                src={imageUrl}
-                alt=""
-                className="h-6 w-6 mr-2"
-              />
+              <img src={imageUrl} alt="" className="h-6 w-6 mr-2" />
               {/* Text tlačítka */}
               {link.label}
             </button>
