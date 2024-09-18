@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{html,js,jsx}',
     './src/**/*.{html,js,jsx}',
+    './src/styles/**/*.{html,js,jsx,css}',
+    
+   
   ],
   theme: {
     extend: {
@@ -15,8 +17,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'), // Plugin pro lepší stylování formulářů
-    require('@tailwindcss/typography'), // Plugin pro lepší typografii
-  ],
+
 }
