@@ -48,7 +48,7 @@ const Home = () => {
       <div className="flex flex-row p-2 space-x-1 ">
  {links.map((link, index) => {
           // Složený obrázek: základní obrázek + Google ikona
-          const imageUrl = `${link.imageUrl}?${googleIcon}`;
+          const imageUrl = `${googleIcon}${link.imageUrl}`;
 
           return (
             <button
@@ -59,11 +59,11 @@ const Home = () => {
               {/* Obrázek */}
               <img
                 src={imageUrl}
-                alt={link.label}
-                className="h-6 w-6 mr-2"
+                alt=""
+                className="h-10 w-10 m-2 p-1"
               />
               {/* Text tlačítka */}
-              {link.label}
+              {link.label} 
             </button>
           );
         })}

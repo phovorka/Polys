@@ -1,9 +1,9 @@
 {
   "links": [
     {
-      "label": "Button 1",
-      "baseUrl": "https://www.example1.com/search?q=",
-      "imageUrl": "https://via.placeholder.com/24"
+      "label": "Seznam",
+      "baseUrl": "https://www.seznam.cz/search?q=",
+      "imageUrl": "https://www.seznam.cz/search?q="
     },
     {
       "label": "Button 2",
@@ -16,5 +16,5 @@
       "imageUrl": "https://via.placeholder.com/24"
     }
   ],
-  "googleIcon": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png" 
+  "googleIcon": "http://www.google.com/s2/favicons?domain=" 
 }
