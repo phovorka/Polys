@@ -8,14 +8,11 @@ const Home = () => {
   const [links, setLinks] = useState([]);
   const [googleIcon, setGoogleIcon] = useState('');
   
-  // Načtení dat z JSON souboru
+ // Načtení dat z JSON souboru
   useEffect(() => {
     fetch('src/links.json')
       .then((response) => response.json())
-      .then((data) => {
-        setLinks(data.links);
-        setGoogleIcon(data.googleIcon); // Nastavení URL Google ikony
-      });
+      .then((data) => setLinks(data.links));
   }, []);
   
 
@@ -48,7 +45,7 @@ const Home = () => {
       <div className="flex flex-row p-2 space-x-1 ">
  {links.map((link, index) => {
           // Složený obrázek: základní obrázek + Google ikona
-          const imageUrl = `${googleIcon}${link.imageUrl}`;
+          const imageUrl = `http://www.google.com/s2/favicons?domain=${link.baseUrl}`;
 
           return (
             <button
@@ -60,10 +57,10 @@ const Home = () => {
               <img
                 src={imageUrl}
                 alt=""
-                className="h-10 w-10 m-2 p-1"
+                className="h-6 w-6 mr-2"
               />
               {/* Text tlačítka */}
-              {link.label} 
+              {link.label}
             </button>
           );
         })}

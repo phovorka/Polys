@@ -2,19 +2,18 @@
   "links": [
     {
       "label": "Seznam",
-      "baseUrl": "https://www.seznam.cz/search?q=",
-      "imageUrl": "https://www.seznam.cz/search?q="
+      "baseUrl": "https://www.seznam.cz/search?q="
+      
     },
     {
       "label": "Button 2",
-      "baseUrl": "https://www.example2.com/search?q=",
-      "imageUrl": "https://via.placeholder.com/24" 
+      "baseUrl": "https://www.example2.com/search?q="
+     
     },
     {
       "label": "Button 3",
-      "baseUrl": "https://www.example3.com/search?q=",
-      "imageUrl": "https://via.placeholder.com/24"
+      "baseUrl": "https://www.example3.com/search?q="
+     
     }
-  ],
-  "googleIcon": "http://www.google.com/s2/favicons?domain=" 
+  ]
 }
