@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Poppins','Inter', 'sans-serif'],
       },
       colors: {
         primary: '#ff6347',
@@ -19,3 +19,4 @@ module.exports = {
   },
 
 }
+ 
