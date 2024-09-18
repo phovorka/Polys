@@ -1,25 +1,12 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
 
-// Header component
-const Home = () => {
-  const [links, setLinks] = useState([]);
+export default function Home() {
 
-  // Načtení JSON souboru při načtení komponenty
-  useEffect(() => {
-    // Simulace načtení dat z JSON souboru
-    fetch("/links.json")
-      .then((response) => response.json())
-      .then((data) => setLinks(data.links));
-  }, []);
-
-  // Funkce pro otevření odkazu v novém okně
-  const openLink = (url) => {
-    window.open(url, "_blank"); // Otevření odkazu v novém okně
-  };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+   
+      
+  <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
       {/* Nadpis s logem */}
       <div className="flex items-center space-x-4 mb-6">
         <img
@@ -41,19 +28,12 @@ const Home = () => {
 
       {/* Tlačítka v jedné linii */}
       <div className="flex space-x-1">
-        <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
-          Tlačítko 1
-        </button>
-        <button className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">
-          Tlačítko 2
-        </button>
-        <button className="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600">
-          Tlačítko 3
-        </button>
-        <button className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600">
-          Tlačítko 4
-        </button>
+        <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Tlačítko 1</button>
+        <button className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">Tlačítko 2</button>
+        <button className="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600">Tlačítko 3</button>
+        <button className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600">Tlačítko 4</button>
       </div>
     </div>
+  
   );
-};
+}
