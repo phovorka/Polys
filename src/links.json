@@ -2,11 +2,15 @@
   "links": [
     {
       "label": "Button 1",
-      "url": "https://www.example.com"
+      "baseUrl": "https://www.example1.com/search?q="
     },
     {
       "label": "Button 2",
-      "url": "https://www.anotherexample.com"
+      "baseUrl": "https://www.example2.com/search?q="
+    },
+    {
+      "label": "Button 3",
+      "baseUrl": "https://www.example3.com/search?q="
     }
   ]
 }
