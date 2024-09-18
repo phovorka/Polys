@@ -3,7 +3,7 @@
     {
       "label": "Button 1",
       "baseUrl": "https://www.example1.com/search?q=",
-      "imageUrl": "https://via.placeholder.com/4"
+      "imageUrl": "https://via.placeholder.com/24"
     },
     {
       "label": "Button 2",
@@ -15,5 +15,6 @@
       "baseUrl": "https://www.example3.com/search?q=",
       "imageUrl": "https://via.placeholder.com/24"
     }
-  ]
+  ],
+  "googleIcon": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png" 
 }

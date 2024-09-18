@@ -6,12 +6,16 @@ import { useState,useEffect  } from 'react';
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
   const [links, setLinks] = useState([]);
+  const [googleIcon, setGoogleIcon] = useState('');
   
-    // Načtení odkazu z JSON souboru
+  // Načtení dat z JSON souboru
   useEffect(() => {
     fetch('src/links.json')
       .then((response) => response.json())
-      .then((data) => setLinks(data.links));
+      .then((data) => {
+        setLinks(data.links);
+        setGoogleIcon(data.googleIcon); // Nastavení URL Google ikony
+      });
   }, []);
   
 
@@ -42,21 +46,27 @@ const Home = () => {
 
 {/* Tlačítka pro otevření odkazů */}
       <div className="flex flex-row p-2 space-x-1 ">
-        {links.map((link, index) => (
-          <button
-            key={index}
-            className="bg-blue-500 text-white px-4 py-2 rounded "
-            onClick={() => openLink(link.baseUrl)}
-          >   {/* Obrázek */}
-            <img
-              src={link.imageUrl}
-              
-              className="h-6 w-6 mr-2" // Velikost obrázku a margin
-            />
-            
-            {link.label}
-          </button>
-        ))}
+ {links.map((link, index) => {
+          // Složený obrázek: základní obrázek + Google ikona
+          const imageUrl = `${link.imageUrl}?${googleIcon}`;
+
+          return (
+            <button
+              key={index}
+              className="flex items-center bg-blue-500 text-white px-4 py-2 rounded"
+              onClick={() => openLink(link.baseUrl)}
+            >
+              {/* Obrázek */}
+              <img
+                src={imageUrl}
+                alt={link.label}
+                className="h-6 w-6 mr-2"
+              />
+              {/* Text tlačítka */}
+              {link.label}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
