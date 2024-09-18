@@ -9,7 +9,7 @@ const Home = () => {
   
     // Načtení odkazu z JSON souboru
   useEffect(() => {
-    fetch('../links.json')
+    fetch('src/links.json')
       .then((response) => response.json())
       .then((data) => setLinks(data.links));
   }, []);
@@ -29,7 +29,7 @@ const Home = () => {
         <h1 className="text-4xl font-bold font-poppins">Code Inspiration</h1>
       </div>
 
-      {/* Input pro zadání textu */}
+   {/* Input pro zadání textu */}
       <div className="mb-4">
         <input
           type="text"
@@ -40,14 +40,23 @@ const Home = () => {
         />
       </div>
 
-      {/* Tlačítko pro otevření odkazu */}
-      <div>
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-          onClick={openLinkWithInput}
-        >
-          Open Link with Input Text
-        </button>
+{/* Tlačítka pro otevření odkazů */}
+      <div className="flex flex-row p-2 space-x-2">
+        {links.map((link, index) => (
+          <button
+            key={index}
+            className="bg-blue-500 text-white px-4 py-2 rounded"
+            onClick={() => openLink(link.baseUrl)}
+          >   {/* Obrázek */}
+            <img
+              src={link.imageUrl}
+              
+              className="h-6 w-6 mr-2" // Velikost obrázku a margin
+            />
+            
+            {link.label}
+          </button>
+        ))}
       </div>
     </div>
   );
