@@ -6,13 +6,14 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "build:css": "tailwindcss build src/styles/styles.css -o stylessss.css"
   },
   "dependencies": {
+    "@vitejs/plugin-react": "^4.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@vitejs/plugin-react": "^4.0.3",
-    "tailwindcss": "^3.4.11"
+    "tailwindcss": "^3.4.12"
   },
   "devDependencies": {
     "vite": "^4.0.0"
