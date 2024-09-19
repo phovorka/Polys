@@ -20,17 +20,22 @@ const Home = () => {
   };
 
   return (
-    <div className="p-8">
-      {/* Logo a nadpis */}
-      <div className="flex items-center mb-4">
-        <h1 className="text-4xl font-bold font-poppins">Code Inspiration</h1>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+      {/* Nadpis s logem */}
+      <div className="flex items-center space-x-4 mb-6">
+        <img
+          src="https://via.placeholder.com/50"
+          alt="Logo"
+          className="w-12 h-12"
+        />
+        <h1 className="text-3xl font-bold font-poppins">Code inspiration</h1>
       </div>
 
       {/* Input pro zadání textu */}
-      <div className="mb-4">
+      <div className="mb-6">
         <input
           type="text"
-          className="border border-gray-300 p-2 rounded w-full"
+          className="border border-gray-300 rounded-lg p-2 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Enter search text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
@@ -46,11 +51,11 @@ const Home = () => {
           return (
             <button
               key={index}
-              className="flex items-center bg-blue-500 text-white px-4 py-2 rounded"
+              className="bg-blue-500 items-center text-white py-2 px-4 rounded-lg hover:bg-blue-600"
               onClick={() => openLink(link.baseUrl)}
             >
               {/* Obrázek */}
-              <img src={imageUrl} alt="" className="h-6 w-6 mr-2" />
+              <img src={imageUrl} alt="" className=" justify-center mr-2" style={{ width: '32px', height: '16px' }}/>
               {/* Text tlačítka */}
               {link.label}
             </button>
