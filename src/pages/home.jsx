@@ -51,11 +51,11 @@ const Home = () => {
           return (
             <button
               key={index}
-              className="bg-blue-500 items-center text-white py-2 px-4 rounded-lg hover:bg-blue-600"
+              className="flex  bg-blue-500 items-center justify-center text-white py-2 px-4 rounded-lg hover:bg-blue-600"
               onClick={() => openLink(link.baseUrl)}
             >
               {/* Obrázek */}
-              <img src={imageUrl} alt="" className=" justify-center mr-2" style={{ width: '32px', height: '16px' }}/>
+              <img src={imageUrl} alt="" className=" justify-center " style={{ width: '20px', height: '20px', marginRight: '6px' }}/>
               {/* Text tlačítka */}
               {link.label}
             </button>
