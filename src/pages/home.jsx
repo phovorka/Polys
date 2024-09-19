@@ -6,6 +6,16 @@ const Home = () => {
   const [links, setLinks] = useState([]);
   const [googleIcon, setGoogleIcon] = useState("");
 
+  
+    // .......................................................................ID of the Google Spreadsheet
+  const id = "19-p2E9G7yLGNumRyZo4Dl_rmoLQsT7TZ1DFx2qg0jpM";
+  const gid = "1";
+  const url = `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:json&tq&gid=${gid}`;
+
+  let myItems;
+
+  
+  
   // Načtení dat z JSON souboru
   useEffect(() => {
     fetch("src/links.json")
@@ -42,8 +52,13 @@ const Home = () => {
         />
       </div>
 
+
       {/* Tlačítka pro otevření odkazů */}
-      <div className="flex flex-row p-2 space-x-1 ">
+      <div className="flex flex-row p-2 space-x-1  ">
+      
+<div className="flex justify-center items-center h-screen">
+  <div className="w-16 h-16 border-4 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
+</div>
         {links.map((link, index) => {
           // Složený obrázek: základní obrázek + Google ikona
           const imageUrl = `http://www.google.com/s2/favicons?domain=${link.baseUrl}`;
