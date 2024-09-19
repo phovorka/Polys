@@ -13,6 +13,10 @@ const Home = () => {
   const url = `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:json&tq&gid=${gid}`;
 
   let myItems;
+  const loaderElement = document.getElementById("loader");
+  if (loaderElement) {
+    loaderElement.style.display = "block";
+  }
 
   
   
