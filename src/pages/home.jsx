@@ -4,14 +4,14 @@ import { useState, useEffect } from "react";
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
   const [links, setLinks] = useState([]);
-  const [googleIcon, setGoogleIcon] = useState("");
+
 
   
     // .......................................................................ID of the Google Spreadsheet
   const id = "1nc9iRz8njhfVdZslBrwyB52BLBYMArbwu2nnkCeBD9Q";
   const gid = "1";
   const url = `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:json&tq&gid=${gid}`;
-
+console.log(url);
   let myItems;
   const loaderElement = document.getElementById("loader");
   if (loaderElement) {
