@@ -1,10 +1,8 @@
 import React from "react";
 
-// Import the Home page component
-import Home from "./pages/home.jsx";
 
-// Import the Home page component
-import TestComponent from "./pages/foot.jsx";
+import Home from "./pages/home.jsx";
+import Footer from "./pages/foot.jsx";
 
 // Import and apply CSS stylesheet
 import "./styles/styles.css";
@@ -12,8 +10,8 @@ import "./styles/styles.css";
 export default function App() {
   return (
     <>
-     <Home />
-      <Footer/>
+      <Home />
+      <Footer />  
     </>
   );
 }
