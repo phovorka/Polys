@@ -21,27 +21,33 @@ console.log(url);
  
   // Načtení dat z JSON souboru
   useEffect(() => {
-    const fetchSheetData = async () => {
-    try {
-        // Nahraď tento odkaz svým veřejným JSON odkazem nebo API klíčem
+  const fetchSheetData = async () => {
+      try {
         const response = await fetch(url);
-        const data = await response.json();
-        console.log(data); // Pro zjištění struktury dat
+        const text = await response.text();
 
-        // Předpokládáme, že data jsou ve formátu { "values": [ [label, baseUrl, imageUrl], ... ] }
-        const parsedData = data.values.map(row => ({
-          label: row[0],
-          baseUrl: row[1]
-        }));
+        // Najdeme část, která obsahuje JSON data
+        const jsonStr = text.match(/google\.visualization\.Query\.setResponse\((.+)\);/)[1];
+        const parsedData = JSON.parse(jsonStr);  // Konverze na objekt
 
-        setLinks(parsedData);
+        // Extrahujeme potřebná data (label, baseUrl, případně imageUrl)
+        const rows = parsedData.table.rows.slice(1);  // slice(1) přeskočí první řádek
+        const data = rows.map(row => {
+          return {
+            label: row.c[0].v,         // První sloupec: Label
+            baseUrl: row.c[1].v,       // Druhý sloupec: Base URL
+          };
+        });
+
+        setLinks(data);
       } catch (error) {
         console.error('Error fetching data from Google Sheets:', error);
       }
-   };
+    };
 
     fetchSheetData();
   }, []);
+  
   // Funkce pro otevření odkazu s textem z inputu
   const openLink = (baseUrl) => {
     const fullUrl = `${baseUrl}${encodeURIComponent(inputValue)}`;
