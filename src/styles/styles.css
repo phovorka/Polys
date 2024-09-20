@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Zarovná tlačítka na střed */
+ 
+}
+
+.button-item {
+  display: flex;
+    margin: 2px; /* Přidá prostor mezi tlačítky */
+  padding: 10px 10px;
+}
