@@ -79,7 +79,7 @@ console.log(url);
 
 
       {/* Tlačítka pro otevření odkazů */}
-      <div className="flex flex-wrap  gap-4 w-full">
+      <div className="border border-red-500 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
       
 
         {links.map((link, index) => {
@@ -89,7 +89,7 @@ console.log(url);
           return (
             <button
               key={index}
-              className="flex  bg-blue-500 items-center justify-center text-white py-2 px-4 rounded-lg hover:bg-blue-600 w-auto"
+              className="flex bg-blue-500 items-center justify-center text-white py-2 px-4 rounded-lg hover:bg-blue-600 w-auto"
               onClick={() => openLink(link.baseUrl)}
             >
               {/* Obrázek */}
