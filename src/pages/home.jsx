@@ -79,11 +79,9 @@ console.log(url);
 
 
       {/* Tlačítka pro otevření odkazů */}
-      <div className="flex flex-row p-2 space-x-1  ">
+      <div className="flex flex-wrap  gap-4 w-full">
       
-<div className="flex justify-center items-center h-screen">
-  <div className="w-16 h-16 border-4 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
-</div>
+
         {links.map((link, index) => {
           // Složený obrázek: základní obrázek + Google ikona
           const imageUrl = `http://www.google.com/s2/favicons?domain=${link.baseUrl}`;
@@ -91,7 +89,7 @@ console.log(url);
           return (
             <button
               key={index}
-              className="flex  bg-blue-500 items-center justify-center text-white py-2 px-4 rounded-lg hover:bg-blue-600"
+              className="flex  bg-blue-500 items-center justify-center text-white py-2 px-4 rounded-lg hover:bg-blue-600 w-auto"
               onClick={() => openLink(link.baseUrl)}
             >
               {/* Obrázek */}
