@@ -1,10 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client"; // Importujte z 'react-dom/client'
 import App from "./app.jsx";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root")); // Vytvoření rootu
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
