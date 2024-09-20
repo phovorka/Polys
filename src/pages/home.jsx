@@ -79,9 +79,8 @@ console.log(url);
 
 
       {/* Tlačítka pro otevření odkazů */}
-      <div className="border border-red-500 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
-      
-
+     
+<div className="border border-red-500  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
         {links.map((link, index) => {
           // Složený obrázek: základní obrázek + Google ikona
           const imageUrl = `http://www.google.com/s2/favicons?domain=${link.baseUrl}`;
@@ -100,7 +99,8 @@ console.log(url);
           );
         })}
       </div>
-    </div>
+  
+      </div>
   );
 };
 
