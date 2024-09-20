@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
-const TestComponent = () => {
+
+const Footer = () => {
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <div className="border border-red-500 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
-        <div className="bg-blue-500 text-white p-4">Button 1</div>
-        <div className="bg-blue-500 text-white p-4">Button 2</div>
-        <div className="bg-blue-500 text-white p-4">Button 3</div>
-        <div className="bg-blue-500 text-white p-4">Button 4</div>
+    <footer className="footer">
+      <p>© 2024 Code Inspiration. All rights reserved.</p>
+      <div className="footer-links">
+        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href="/terms-of-service" target="_blank" rel="noopener noreferrer">Terms of Service</a>
       </div>
-    </div>
+    </footer>
   );
 };
 
-export default TestComponent;
+export default Footer;
