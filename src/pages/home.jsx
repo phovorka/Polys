@@ -6,6 +6,7 @@ const Home = () => {
   const [links, setLinks] = useState([]);
 
 
+
   
     // .......................................................................ID of the Google Spreadsheet
   const id = "1nc9iRz8njhfVdZslBrwyB52BLBYMArbwu2nnkCeBD9Q";
@@ -43,6 +44,7 @@ console.log(url);
       } catch (error) {
         console.error('Error fetching data from Google Sheets:', error);
       }
+
     };
 
     fetchSheetData();
@@ -57,6 +59,8 @@ console.log(url);
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
       {/* Nadpis s logem */}
+           
+      
       <div className="flex items-center space-x-4 mb-6">
         <img
           src="https://via.placeholder.com/50"
