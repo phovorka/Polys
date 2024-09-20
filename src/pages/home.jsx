@@ -8,7 +8,7 @@ const Home = () => {
 
   
     // .......................................................................ID of the Google Spreadsheet
-  const id = "19-p2E9G7yLGNumRyZo4Dl_rmoLQsT7TZ1DFx2qg0jpM";
+  const id = "1nc9iRz8njhfVdZslBrwyB52BLBYMArbwu2nnkCeBD9Q";
   const gid = "1";
   const url = `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:json&tq&gid=${gid}`;
 
@@ -18,15 +18,30 @@ const Home = () => {
     loaderElement.style.display = "block";
   }
 
-  
-  
+ 
   // Načtení dat z JSON souboru
   useEffect(() => {
-    fetch("src/links.json")
-      .then((response) => response.json())
-      .then((data) => setLinks(data.links));
-  }, []);
+    const fetchSheetData = async () => {
+    try {
+        // Nahraď tento odkaz svým veřejným JSON odkazem nebo API klíčem
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data); // Pro zjištění struktury dat
 
+        // Předpokládáme, že data jsou ve formátu { "values": [ [label, baseUrl, imageUrl], ... ] }
+        const parsedData = data.values.map(row => ({
+          label: row[0],
+          baseUrl: row[1]
+        }));
+
+        setLinks(parsedData);
+      } catch (error) {
+        console.error('Error fetching data from Google Sheets:', error);
+      }
+   };
+
+    fetchSheetData();
+  }, []);
   // Funkce pro otevření odkazu s textem z inputu
   const openLink = (baseUrl) => {
     const fullUrl = `${baseUrl}${encodeURIComponent(inputValue)}`;
