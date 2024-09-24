@@ -70,7 +70,7 @@ const Home = () => {
       <div className="mb-6">
         <input
           type="text"
-          className="border border-gray-300 rounded-lg p-2 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-gray-300  rounded-lg p-2 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Enter search text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
@@ -87,7 +87,7 @@ const Home = () => {
           return (
             <button
               key={index}
-              className="button-item bg-blue-500 items-center justify-center text-white rounded-lg hover:bg-blue-600 "
+              className="text-sm  button-item bg-blue-500 items-center justify-center text-white rounded-lg hover:bg-blue-600 "
               onClick={() => openLink(link.baseUrl)}
             >
               {/* Obrázek */}
