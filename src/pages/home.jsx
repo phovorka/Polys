@@ -9,7 +9,7 @@ const Home = () => {
   const id = "1nc9iRz8njhfVdZslBrwyB52BLBYMArbwu2nnkCeBD9Q";
   const gid = "1";
   const url = `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:json&tq&gid=${gid}`;
-  console.log(url);
+  // console.log(url);
   let myItems;
   const loaderElement = document.getElementById("loader");
   if (loaderElement) {
@@ -17,6 +17,7 @@ const Home = () => {
   }
 
   // Načtení dat z JSON souboru
+  
   useEffect(() => {
     const fetchSheetData = async () => {
       try {

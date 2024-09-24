@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-grey-300 text-blue p-4 text-sm text-center  w-full">
-      <p className="">© 2024 Code Inspiration. All rights reserved.</p>
+      <p className="">© 2024 Stack: React, Tailwind, Google Sheets</p>
       <div className="flex justify-center mt-4 space-x-4">
         <a
           href="/privacy-policy"
@@ -11,7 +11,7 @@ const Footer = () => {
           rel="noopener noreferrer"
 
         >
-          Privacy Policy
+          Polysearch
         </a>
         <a
           href="/terms-of-service"
@@ -19,7 +19,7 @@ const Footer = () => {
           rel="noopener noreferrer"
 
         >
-          Terms of Service
+          
         </a>
       </div>
     </footer>
