@@ -19,7 +19,7 @@ const Footer = () => {
           rel="noopener noreferrer"
 
         >
-          Awesome links
+          Polysearch
         </a>
       </div>
     </footer>
