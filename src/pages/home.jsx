@@ -55,7 +55,7 @@ const Home = () => {
   };
 
   return (
-    <div className="pt-40 pb-40  bg-gray-100 flex flex-col items-center justify-center">
+    <div className="pt-40 pb-60  bg-gray-100 flex flex-col items-center justify-center">
       {/* Nadpis s logem */}
 
       <div className="flex items-center space-x-4 mb-6">
@@ -64,7 +64,7 @@ const Home = () => {
           alt="Logo"
           className="w-12 h-12"
         />
-        <h1 className="text-3xl font-bold ">Code inspiration</h1>
+        <h1 className="text-3xl font-bold ">Jobs search</h1>
       </div>
 
       {/* Input pro zadání textu */}
