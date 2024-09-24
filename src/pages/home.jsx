@@ -70,7 +70,7 @@ const Home = () => {
       <div className="mb-6">
         <input
           type="text"
-          className="border border-gray-300  rounded-lg p-2 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-gray-300  font-sm rounded-lg p-2 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Enter search text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
