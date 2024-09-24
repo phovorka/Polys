@@ -5,51 +5,48 @@ const Home = () => {
   const [inputValue, setInputValue] = useState("");
   const [links, setLinks] = useState([]);
 
-
-
-  
-    // .......................................................................ID of the Google Spreadsheet
+  // .......................................................................ID of the Google Spreadsheet
   const id = "1nc9iRz8njhfVdZslBrwyB52BLBYMArbwu2nnkCeBD9Q";
   const gid = "1";
   const url = `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:json&tq&gid=${gid}`;
-console.log(url);
+  console.log(url);
   let myItems;
   const loaderElement = document.getElementById("loader");
   if (loaderElement) {
     loaderElement.style.display = "block";
   }
 
- 
   // Načtení dat z JSON souboru
   useEffect(() => {
-  const fetchSheetData = async () => {
+    const fetchSheetData = async () => {
       try {
         const response = await fetch(url);
         const text = await response.text();
 
         // Najdeme část, která obsahuje JSON data
-        const jsonStr = text.match(/google\.visualization\.Query\.setResponse\((.+)\);/)[1];
-        const parsedData = JSON.parse(jsonStr);  // Konverze na objekt
+        const jsonStr = text.match(
+          /google\.visualization\.Query\.setResponse\((.+)\);/
+        )[1];
+        const parsedData = JSON.parse(jsonStr); // Konverze na objekt
 
         // Extrahujeme potřebná data (label, baseUrl, případně imageUrl)
-        const rows = parsedData.table.rows.slice(1);  // slice(1) přeskočí první řádek
-        const data = rows.map(row => {
+        const rows = parsedData.table.rows.slice(1); // slice(1) přeskočí první řádek
+        const data = rows.map((row) => {
           return {
-            label: row.c[0].v,         // První sloupec: Label
-            baseUrl: row.c[1].v,       // Druhý sloupec: Base URL
+            label: row.c[0].v, // První sloupec: Label
+            baseUrl: row.c[1].v, // Druhý sloupec: Base URL
           };
         });
 
         setLinks(data);
       } catch (error) {
-        console.error('Error fetching data from Google Sheets:', error);
+        console.error("Error fetching data from Google Sheets:", error);
       }
-
     };
 
     fetchSheetData();
   }, []);
-  
+
   // Funkce pro otevření odkazu s textem z inputu
   const openLink = (baseUrl) => {
     const fullUrl = `${baseUrl}${encodeURIComponent(inputValue)}`;
@@ -59,15 +56,14 @@ console.log(url);
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
       {/* Nadpis s logem */}
-           
-      
+
       <div className="flex items-center space-x-4 mb-6">
         <img
           src="https://via.placeholder.com/50"
           alt="Logo"
           className="w-12 h-12"
         />
-        <h1 className="text-3xl font-bold font-poppins">Code inspiration</h1>
+        <h1 className="text-3xl font-bold ">Code inspiration</h1>
       </div>
 
       {/* Input pro zadání textu */}
@@ -81,10 +77,9 @@ console.log(url);
         />
       </div>
 
-
       {/* Tlačítka pro otevření odkazů */}
-     
-<div className="button-container">
+
+      <div className="button-container">
         {links.map((link, index) => {
           // Složený obrázek: základní obrázek + Google ikona
           const imageUrl = `http://www.google.com/s2/favicons?domain=${link.baseUrl}`;
@@ -96,17 +91,20 @@ console.log(url);
               onClick={() => openLink(link.baseUrl)}
             >
               {/* Obrázek */}
-              <img src={imageUrl} alt="" className=" justify-center " style={{ width: '20px', height: '20px', marginRight: '6px' }}/>
+              <img
+                src={imageUrl}
+                alt=""
+                className=" justify-center "
+                style={{ width: "20px", height: "20px", marginRight: "6px" }}
+              />
               {/* Text tlačítka */}
               {link.label}
             </button>
           );
         })}
       </div>
-  
-      </div>
+    </div>
   );
 };
 
 export default Home;
-
