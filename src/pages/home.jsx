@@ -55,12 +55,12 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+    <div className="pt-40 pb-40  bg-gray-100 flex flex-col items-center justify-center">
       {/* Nadpis s logem */}
 
       <div className="flex items-center space-x-4 mb-6">
         <img
-          src="https://via.placeholder.com/50"
+          src="https://cdn.glitch.global/2222818e-a3bd-45a1-bab7-d9b34184a3e0/code.svg?v=1727181401677"
           alt="Logo"
           className="w-12 h-12"
         />
