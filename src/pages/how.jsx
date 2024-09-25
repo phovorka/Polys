@@ -12,8 +12,8 @@ const HowItWorks = () => {
  <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Step 1: Remix your own Polysearch</h2>
-          <p className="text-gray-700 mb-4">To install the software, first download the installer from our official website. Follow the instructions to complete the installation process.</p>
+          <h2 className="text-2xl font-semibold mb-4">Use query only once, search where you want.</h2>
+          <p className="text-gray-700 mb-4">Google cannot search (index) everything, thats why manual search comes handy. Writing or copy pasting one query again and again is tiring. Thats why i created Polysearch. Searching on loved websites with one written query.  </p>
           <pre className="bg-gray-100 p-4 rounded-md">
           <img src="path-to-your-image/installation-guide.png" alt="Installation guide" className="w-full rounded-md" />
           </pre>
