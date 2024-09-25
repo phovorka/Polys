@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
   const [links, setLinks] = useState([]);
-
+  const [loading, setLoading] = useState(true); // New state for loading
   // .......................................................................ID of the Google Spreadsheet
   const id = "1nc9iRz8njhfVdZslBrwyB52BLBYMArbwu2nnkCeBD9Q";
   const gid = "1";
@@ -42,8 +42,10 @@ const Home = () => {
         });
 
         setLinks(data);
+         setLoading(false); // Data loaded, stop loading spinner
       } catch (error) {
         console.error("Error fetching data from Google Sheets:", error);
+         setLoading(false); // Stop loading even if there's an error
       }
     };
 
@@ -83,6 +85,12 @@ const Home = () => {
     onChange={(e) => setInputValue(e.target.value)}
   />
 </div>
+        {/* Show spinner if loading is true */}
+      {loading ? (
+        <div className="flex justify-center items-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
+        </div>
+      )  }
 
       {/* Tlačítka pro otevření odkazů */}
 
@@ -110,6 +118,7 @@ const Home = () => {
           );
         })}
       </div>
+              
     </div>
   );
 };
