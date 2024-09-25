@@ -85,40 +85,35 @@ const Home = () => {
     onChange={(e) => setInputValue(e.target.value)}
   />
 </div>
-        {/* Show spinner if loading is true */}
+        
+   {/* Show spinner if loading is true */}
       {loading ? (
         <div className="flex justify-center items-center">
           <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
         </div>
-      )  }
+      ) : (
+        <div className="button-container">
+          {links.map((link, index) => {
+            const imageUrl = `http://www.google.com/s2/favicons?domain=${link.baseUrl}`;
 
-      {/* Tlačítka pro otevření odkazů */}
-
-      <div className="button-container">
-        {links.map((link, index) => {
-          // Složený obrázek: základní obrázek + Google ikona
-          const imageUrl = `http://www.google.com/s2/favicons?domain=${link.baseUrl}`;
-
-          return (
-            <button
-              key={index}
-              className="text-sm  button-item bg-blue-500 items-center justify-center text-white rounded-lg hover:bg-blue-600 "
-             onClick={() => openLink(link.baseUrl, link.endUrl)}
-            >
-              {/* Obrázek */}
-              <img
-                src={imageUrl}
-                alt=""
-                className=" justify-center "
-                style={{ width: "20px", height: "20px", marginRight: "6px" }}
-              />
-              {/* Text tlačítka */}
-              {link.label}
-            </button>
-          );
-        })}
-      </div>
-              
+            return (
+              <button
+                key={index}
+                className="text-sm button-item bg-blue-500 items-center justify-center text-white rounded-lg hover:bg-blue-600"
+                onClick={() => openLink(link.baseUrl, link.endUrl)}
+              >
+                <img
+                  src={imageUrl}
+                  alt=""
+                  className="justify-center"
+                  style={{ width: "20px", height: "20px", marginRight: "6px" }}
+                />
+                {link.label}
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

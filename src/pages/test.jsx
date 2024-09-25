@@ -1,8 +1,11 @@
+// pridej Lokaci ukazka
+
 import * as React from "react";
 import { useState, useEffect } from "react";
 
 const Home = () => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(""); // State for search input
+  const [locationValue, setLocationValue] = useState(""); // State for location input
   const [links, setLinks] = useState([]);
   const [loading, setLoading] = useState(true); // New state for loading
 
@@ -39,9 +42,9 @@ const Home = () => {
     fetchSheetData();
   }, []);
 
-  // Function to open link with text from input
+  // Function to open link with text from input and location
   const openLink = (baseUrl, endUrl) => {
-    const fullUrl = `${baseUrl}${endUrl}${encodeURIComponent(inputValue)}`;
+    const fullUrl = `${baseUrl}${endUrl}${encodeURIComponent(inputValue)}&location=${encodeURIComponent(locationValue)}`;
     window.open(fullUrl, "_blank");
   };
 
@@ -68,6 +71,22 @@ const Home = () => {
           placeholder="Enter search text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+        />
+      </div>
+
+      {/* Input for location */}
+      <div className="mb-6 relative">
+        <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+          <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" d="M9 8.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7zm-1 5.5a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zm9 0a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" clipRule="evenodd" />
+          </svg>
+        </span>
+        <input
+          type="text"
+          className="border border-gray-300 font-sm rounded-lg p-2 pl-10 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter location"
+          value={locationValue}
+          onChange={(e) => setLocationValue(e.target.value)}
         />
       </div>
 
