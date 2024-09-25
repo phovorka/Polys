@@ -36,7 +36,7 @@ const Home = () => {
           return {
             label: row.c[0].v, // První sloupec: Label
             baseUrl: row.c[1].v, // Druhý sloupec: Base URL
-            endUrl: row.c[2]?.v, // Third column: End URL
+           endUrl: row.c[2]?.v || "", // Third column: End URL or empty string
             
           };
         });
@@ -95,7 +95,7 @@ const Home = () => {
             <button
               key={index}
               className="text-sm  button-item bg-blue-500 items-center justify-center text-white rounded-lg hover:bg-blue-600 "
-              onClick={() => openLink(link.baseUrl)}
+             onClick={() => openLink(link.baseUrl, link.endUrl)}
             >
               {/* Obrázek */}
               <img
