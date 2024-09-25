@@ -12,15 +12,15 @@ const HowItWorks = () => {
  <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Use query only once, search where you want.</h2>
+          <h2 className="text-2xl font-semibold mb-4">Why? Use query only once, search where you want.</h2>
           <p className="text-gray-700 mb-4">Google cannot search (index) everything, thats why manual search comes handy. Writing or copy pasting one query again and again is tiring. Thats why i created Polysearch. Searching on loved websites with one written query.  </p>
-          <pre className="bg-gray-100 p-4 rounded-md">
-          <img src="path-to-your-image/installation-guide.png" alt="Installation guide" className="w-full rounded-md" />
+          <pre className="p-4 rounded-md">
+          <img src="https://cdn.glitch.global/2222818e-a3bd-45a1-bab7-d9b34184a3e0/111.png?v=1727255059518" alt="Installation guide" className="w-full rounded-md" />
           </pre>
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Step 2: Configuration</h2>
+          <h2 className="text-2xl font-semibold mb-4"> Creating your own POLYSEARCH web</h2>
           <p className="text-gray-700 mb-4">After installation, open the configuration file located in the software directory and modify the necessary settings to fit your environment.</p>
           <pre className="bg-gray-100 p-4 rounded-md">
             <code>{`{
@@ -28,15 +28,17 @@ const HowItWorks = () => {
   "setting2": "value2"
 }`}</code>
           </pre>
-        </section>
-        
-        <section className="mb-8">
+          
+                  <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Step 3: Running the Software</h2>
           <p className="text-gray-700 mb-4">To start using the software, run the following command in your terminal:</p>
           <pre className="bg-gray-100 p-4 rounded-md">
             <code>my-software run</code>
           </pre>
         </section>
+        </section>
+        
+
         
         <section>
           <h2 className="text-2xl font-semibold mb-4">Troubleshooting</h2>
