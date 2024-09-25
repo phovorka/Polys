@@ -9,7 +9,7 @@ const Top = () => {
     <Link to="/main.jsx" className="text-purple-800 font-bold text-xl  hover:text-blue-400">
         Polysearch
     </Link>
-     
+
          <Link to="/how.jsx" className="text-purple-500 hover:text-blue-400">
           How it works?
         </Link>

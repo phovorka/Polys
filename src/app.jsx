@@ -16,6 +16,7 @@ export default function App() {
         <Header />
         <Routes>
           {/* Definice jednotlivých stránek */}
+          <Route path="/" element={<Main />} />
           <Route path="/main.jsx" element={<Main />} />
           <Route path="/how.jsx" element={<How />} />
         </Routes>
