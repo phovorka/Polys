@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Main from "./pages/main.jsx";
 import Footer from "./pages/footer.jsx";
@@ -11,7 +12,12 @@ import "./styles/styles.css";
 export default function App() {
   return (
     <>
+       <Router>
       <Header />
+            <Routes>
+        {/* Definice jednotlivých stránek */}
+        <Route path="/how.jsx" element={<how />} />
+      </Routes>
       <How />
       <Main />
       <Footer />
