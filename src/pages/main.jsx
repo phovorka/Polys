@@ -36,6 +36,8 @@ const Home = () => {
           return {
             label: row.c[0].v, // První sloupec: Label
             baseUrl: row.c[1].v, // Druhý sloupec: Base URL
+            endUrl: row.c[2]?.v, // Third column: End URL
+            
           };
         });
 
@@ -49,8 +51,8 @@ const Home = () => {
   }, []);
 
   // Funkce pro otevření odkazu s textem z inputu
-  const openLink = (baseUrl) => {
-    const fullUrl = `${baseUrl}${encodeURIComponent(inputValue)}`;
+  const openLink = (baseUrl,endUrl) => {
+    const fullUrl = `${baseUrl}${encodeURIComponent(inputValue)}${endUrl}`;
     window.open(fullUrl, "_blank");
   };
 
